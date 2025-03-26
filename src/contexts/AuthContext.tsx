@@ -1,12 +1,12 @@
 import { createContext, useState } from "react";
-import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword} from "firebase/auth";
-
+import { createUserWithEmailAndPassword,  onAuthStateChanged, signInWithEmailAndPassword} from "firebase/auth";
+import { auth } from "../firebaseConfig";
 
 export const AuthContext = createContext<any>(null);
 
 export const AuthProvider = ({children}:any) => {
 
-  const Auth = getAuth();
+  const Auth = auth;
 
   const [user, setUser] = useState<any>(null);
   const [loading, setLoading] = useState(false);
@@ -28,7 +28,7 @@ export const AuthProvider = ({children}:any) => {
     setUser(user);
     setLoading(false);
   }, (error) => {
-    throw "Some error occurred: " + error;
+    throw new Error("Some error occurred: " + error);
   });
 
   const values = {
