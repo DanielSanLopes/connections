@@ -1,7 +1,7 @@
 import React from 'react';
 // import logo from './logo.svg'
 import './App.css';
-import { AuthProvider } from './contexts/AuthContext';
+import  AuthProvider  from './contexts/AuthContext';
 import Switcher from './Switcher';
 import ConnectionsScreen from './screens/ConnectionsScreen';
 import ChatScreen from './screens/ChatScreen';
@@ -11,9 +11,9 @@ function App() {
   return (
     <div className="App" style={{height:"100%"}}>
       <AuthProvider>
-        <ChatScreen/>
+        {/* <ChatScreen/> */}
         {/* <ConnectionsScreen/> */}
-        {/* <Switcher/> */}
+        <Switcher/>
       </AuthProvider>
       
     
