@@ -17,7 +17,6 @@ import {
     DialogContent,
     DialogActions,
     Paper,
-    InputAdornment
 } from '@mui/material';
 
 type Contact = {
@@ -39,13 +38,14 @@ type Message = {
 type Conversation = Message[];
 
 const ChatScreen = () => {
-    // Initial data
+    // Mock
     const initialContacts: Contact[] = [
         { id: 1, name: 'João Silva', avatar: 'JS', lastMessage: 'Oi, tudo bem?', unread: 2 },
         { id: 2, name: 'Maria Souza', avatar: 'MS', lastMessage: 'Vamos marcar aquela reunião', unread: 0 },
         { id: 3, name: 'Carlos Oliveira', avatar: 'CO', lastMessage: 'Enviei o arquivo que você pediu', unread: 1 }
     ];
 
+    //Mock
     const initialMessages: Record<number, Conversation> = {
         1: [
             { id: 1, text: 'Oi, tudo bem?', sender: 'them', time: '10:30' },
